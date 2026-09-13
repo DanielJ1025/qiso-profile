@@ -221,9 +221,16 @@ sup.ref{font-size:.66em;color:var(--ac2);font-weight:500;margin-left:2px;vertica
 .pill{display:inline-block;font-size:11px;font-weight:600;padding:1px 8px;border-radius:5px;background:var(--acd);color:var(--ac2);white-space:nowrap}
 
 /* clients */
-.clients{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
-.clients span{background:var(--surf);border:1px solid var(--bd);border-radius:9px;padding:9px 14px;font-weight:600;font-size:14px;color:var(--tx2)}
-.clients span.key{border-color:var(--acl);color:var(--tx);background:var(--acd)}
+.clients{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:16px}
+.clients .cx{display:flex;align-items:center;gap:12px;background:var(--surf);border:1px solid var(--bd);border-radius:12px;padding:0 15px;min-height:70px;transition:transform .15s ease,border-color .15s ease,box-shadow .15s ease}
+.clients .cx:hover{transform:translateY(-2px);border-color:var(--acl);box-shadow:0 8px 20px rgba(0,0,0,.28)}
+.clients .cx .mn{flex:0 0 auto;width:38px;height:38px;border-radius:10px;display:grid;place-items:center;font-weight:800;font-size:13px;letter-spacing:-.3px;background:var(--acd);color:var(--ac);border:1px solid var(--acl)}
+.clients .cx .nm{font-weight:700;font-size:14px;color:var(--tx);line-height:1.25}
+.clients .cx.key{border-color:var(--acl);background:linear-gradient(180deg,var(--acd),transparent)}
+.clients .cx.key .mn{background:var(--ac);color:#04121a;border-color:var(--ac)}
+.clients .more{grid-column:1/-1;text-align:center;color:var(--mut);font-size:13px;font-weight:600;padding:8px 0 2px;border-top:1px dashed var(--bd);margin-top:4px}
+@media(max-width:900px){.clients{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:560px){.clients{grid-template-columns:repeat(2,1fr)}}
 .logostrip{margin-top:16px;border:1px solid var(--bd);border-radius:16px;overflow:hidden;background:#fff}
 .logostrip img{width:100%;height:auto}
 
@@ -541,7 +548,29 @@ sup.ref{font-size:.66em;color:var(--ac2);font-weight:500;margin-left:2px;vertica
     <p class="note">Contract values confidential · only client·project·region·period shown · full history in a separate order register.</p>
 
     <h3 style="margin:30px 0 6px;font-size:18px">Major clients</h3>
-    <div class="clients"><span class="key">Samsung E&A</span><span>Samsung C&T</span><span>Samsung Biologics</span><span class="key">Hyundai Engineering</span><span>Hyundai E&C</span><span>Hyundai Heavy</span><span class="key">JGC</span><span>Toshiba</span><span>Lotte E&C</span><span>Doosan Enerbility</span><span>Hanwha Ocean</span><span>JNK Heaters</span><span class="key">TSI</span><span>KEPCO E&C</span><span>GS E&C</span><span>SK E&C</span><span>Daelim</span><span>CTCI</span><span>Hyosung</span><span>AVEVA</span><span style="color:var(--mut);border-style:dashed">& more</span></div>
+    <div class="clients">
+      <div class="cx key"><span class="mn">SEA</span><span class="nm">Samsung E&A</span></div>
+      <div class="cx"><span class="mn">SCT</span><span class="nm">Samsung C&T</span></div>
+      <div class="cx"><span class="mn">SBL</span><span class="nm">Samsung Biologics</span></div>
+      <div class="cx key"><span class="mn">HEC</span><span class="nm">Hyundai Engineering</span></div>
+      <div class="cx"><span class="mn">HDEC</span><span class="nm">Hyundai E&C</span></div>
+      <div class="cx"><span class="mn">HHI</span><span class="nm">Hyundai Heavy</span></div>
+      <div class="cx key"><span class="mn">JGC</span><span class="nm">JGC</span></div>
+      <div class="cx"><span class="mn">TOS</span><span class="nm">Toshiba</span></div>
+      <div class="cx"><span class="mn">LOT</span><span class="nm">Lotte E&C</span></div>
+      <div class="cx"><span class="mn">DSE</span><span class="nm">Doosan Enerbility</span></div>
+      <div class="cx"><span class="mn">HWO</span><span class="nm">Hanwha Ocean</span></div>
+      <div class="cx"><span class="mn">JNK</span><span class="nm">JNK Heaters</span></div>
+      <div class="cx key"><span class="mn">TSI</span><span class="nm">TSI</span></div>
+      <div class="cx"><span class="mn">KEP</span><span class="nm">KEPCO E&C</span></div>
+      <div class="cx"><span class="mn">GS</span><span class="nm">GS E&C</span></div>
+      <div class="cx"><span class="mn">SK</span><span class="nm">SK E&C</span></div>
+      <div class="cx"><span class="mn">DL</span><span class="nm">Daelim</span></div>
+      <div class="cx"><span class="mn">CTC</span><span class="nm">CTCI</span></div>
+      <div class="cx"><span class="mn">HYS</span><span class="nm">Hyosung</span></div>
+      <div class="cx"><span class="mn">AVV</span><span class="nm">AVEVA</span></div>
+      <div class="more">& many more · domestic & overseas EPC · engineering · owners</div>
+    </div>
   </div>
 </section>
 
