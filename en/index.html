@@ -68,6 +68,12 @@ sup.ref{font-size:.66em;color:var(--ac2);font-weight:500;margin-left:2px;vertica
 .nav-links a:hover{background:var(--surf2);color:var(--tx)}
 .nav-cta{background:var(--ac);color:#04141a !important;font-weight:700 !important;padding:8px 14px !important;margin-left:6px}
 .themebtn{background:var(--surf2);border:1px solid var(--bd);color:var(--tx2);border-radius:8px;width:36px;height:34px;cursor:pointer;font-size:15px;flex:none}
+.langsw{display:inline-flex;border:1px solid var(--bd);border-radius:8px;overflow:hidden;flex:none;margin-right:6px}
+.langsw a{font-size:12px;font-weight:700;padding:7px 9px;color:var(--mut);background:var(--surf2);font-family:"IBM Plex Mono",monospace;line-height:1}
+.langsw a+a{border-left:1px solid var(--bd)}
+.langsw a:hover{color:var(--tx)}
+.langsw a.on{background:var(--ac);color:#04141a}
+@media print{.langsw{display:none !important}}
 
 /* HERO */
 .hero{position:relative;overflow:hidden;border-bottom:1px solid var(--bd);background:var(--hero-grad)}
@@ -328,6 +334,7 @@ sup.ref{font-size:.66em;color:var(--ac2);font-weight:500;margin-left:2px;vertica
       <a href="#s-ip">Tech·Quality</a>
       <a class="nav-cta" href="#s-cta">Partnership</a>
     </div>
+    <div class="langsw" aria-label="Language"><a href="../">KR</a><a href="./" class="on">EN</a><a href="../ja/">JP</a></div>
     <button class="themebtn" id="themebtn" title="Light/Dark" aria-label="Toggle theme">◐</button>
   </div>
 </nav>
