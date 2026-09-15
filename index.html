@@ -343,6 +343,14 @@ sup.ref{font-size:.66em;color:var(--ac2);font-weight:500;margin-left:2px;vertica
   .brand .mark{flex:none;height:30px;padding:4px 11px}
   .brand .mark img{height:20px;width:auto;display:block}
 }
+.mbar{display:none}
+@media (max-width:600px){
+  .mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:60;gap:8px;padding:8px 12px calc(8px + env(safe-area-inset-bottom));background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(10px);border-top:1px solid var(--bd)}
+  .mbar-b{flex:1;min-height:48px;display:flex;align-items:center;justify-content:center;border-radius:10px;font-weight:700;font-size:15px;text-decoration:none;border:1px solid var(--bd);background:var(--surf2);color:var(--tx)}
+  .mbar-b.prime{background:var(--ac);color:#04141a;border-color:var(--ac)}
+  body{padding-bottom:74px}
+}
+@media print{.mbar{display:none !important}}
 @page{size:A4;margin:12mm 11mm}
 @media print{
   :root:not(.pdf-dark),:root:not(.pdf-dark)[data-theme="dark"]{--bg:#e9eef3;--bg2:#dde5ed;--surf:#ffffff;--surf2:#eef3f8;--surf3:#e4ebf2;--bd:#c4d0dc;--bd2:#a9b8c7;--tx:#0d1a25;--tx2:#2a3a47;--mut:#516070;--faint:#7a8896;--ac:#0b7f93;--ac2:#096076;--acd:#dcf0f4;--acl:#82c0cd;--amber:#8a5f0e;--amberd:#f7ecd0;--shadow:none;--grid-line:transparent;--zebra:#eef3f7;--hero-grad:none}
@@ -921,5 +929,6 @@ var YC={2010:37,2011:28,2012:19,2013:21,2014:20,2015:17,2016:19,2017:26,2018:46,
   });
 })();
 </script>
+<div class="mbar" aria-label="빠른 연락"><a class="mbar-b prime" href="#s-inquiry">문의하기</a><a class="mbar-b" href="tel:+82-2-6446-5000">전화</a></div>
 </body>
 </html>
