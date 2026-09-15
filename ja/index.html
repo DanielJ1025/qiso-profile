@@ -301,13 +301,41 @@ sup.ref{font-size:.66em;color:var(--ac2);font-weight:500;margin-left:2px;vertica
   .gap{grid-template-columns:1fr}
   .vp{grid-template-columns:1fr} .vp>div{border-right:0 !important} .vp .h{display:none} .vp>div:nth-child(3n+3){border-bottom:3px solid var(--bd2)}
   .ba{grid-template-columns:1fr} .ba .arrow{transform:rotate(90deg)}
-  .collab{grid-template-columns:1fr} .collab .link{flex-direction:row} .collab .link .ln{height:2px;width:100%}
+  .collab{grid-template-columns:1fr} .collab .link{flex-direction:row;gap:12px} .collab .link span{white-space:nowrap;flex:none} .collab .link .ln{height:2px;flex:1;width:auto}
   .cta .in{grid-template-columns:1fr} .foot .top{grid-template-columns:1fr}
 }
 @media (max-width:600px){
   .wrap{padding:0 16px} .sec{padding:46px 0}
   .bento,.g2,.g3,.g4{grid-template-columns:1fr} .bento .span2{grid-column:span 1}
   .cb{grid-template-columns:100px 1fr 40px} .nav .brand small{display:none}
+}
+/* ---- mobile optimization 2026 ---- */
+.proofrow{grid-template-columns:1.5fr 1fr}
+.flowwrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:12px}
+@media (max-width:820px){
+  .proofrow{grid-template-columns:1fr!important}
+  .flowwrap{-webkit-mask-image:linear-gradient(90deg,#000 93%,transparent);mask-image:linear-gradient(90deg,#000 93%,transparent)}
+  .flowwrap svg{min-width:900px!important;max-width:none!important;width:900px!important}
+  .tbl-wrap{-webkit-mask-image:linear-gradient(90deg,#000 93%,transparent);mask-image:linear-gradient(90deg,#000 93%,transparent)}
+  .tbl{min-width:610px}
+  .tbl td,.tbl th{white-space:nowrap}
+  .tbl td:nth-child(2){white-space:normal;min-width:190px}
+}
+@media (max-width:600px){
+  body{overflow-x:hidden;font-size:16px}
+  .note,.bento .b .d,.stat .d,.feat p,.lead{font-size:14px}
+  .k,.sec-no{font-size:12px}
+  .langsw a{padding:12px 12px;font-size:13px}
+  .themebtn{width:44px;height:44px}
+  .btn,.nav-cta{min-height:44px;display:inline-flex;align-items:center}
+  .filters button{min-height:40px;padding:8px 14px}
+  .inq input,.inq textarea{font-size:16px;min-height:48px}
+  .clients{grid-template-columns:repeat(2,1fr);gap:8px}
+  .clients .cx{height:62px;padding:8px 10px}
+  .clients .cx img{max-height:34px}
+  .clients .cx.wm span{font-size:14px}
+  .ybars{height:150px}
+  .cb{grid-template-columns:88px 1fr 38px;font-size:13px}
 }
 @page{size:A4;margin:12mm 11mm}
 @media print{
@@ -500,7 +528,7 @@ sup.ref{font-size:.66em;color:var(--ac2);font-weight:500;margin-left:2px;vertica
       <h2>17年、途切れない受注</h2>
       <p class="lead">2010年以降、毎年20〜49件を安定受注。一度の好況ではなく <strong>サイクルを貫く継続取引</strong>がQ_ISOの証拠です。</p>
     </div>
-    <div class="grid g2" style="grid-template-columns:1.5fr 1fr;align-items:stretch">
+    <div class="grid g2 proofrow" style="align-items:stretch">
       <div class="chartcard">
         <div class="k" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);font-weight:600;margin-bottom:6px">年度別受注 (2010–2026)</div>
         <div class="ybars" id="ybars"></div>
@@ -585,7 +613,7 @@ sup.ref{font-size:.66em;color:var(--ac2);font-weight:500;margin-left:2px;vertica
     </div>
     <div class="collab">
       <div class="site hi"><div class="k">HQ · Seoul</div><h3>ソウル本社</h3><ul><li>発注者窓口 · 技術統括</li><li>品質管理 · セキュリティ統制</li><li>成果物の最終検証</li></ul></div>
-      <div class="link"><span>リアルタイム<br>協業</span><div class="ln"></div><span>同時間帯</span></div>
+      <div class="link"><span>リアルタイム 協業</span><div class="ln"></div><span>同時間帯</span></div>
       <div class="site"><div class="k">Offshore Design Center · Manila</div><h3>マニラ拠点</h3><ul><li>オフショア設計センター · 柔軟な増員</li><li>コスト競争力 · 英語対応</li><li>本社同等のセキュリティ</li></ul></div>
     </div>
     <div class="grid g3" style="margin-top:14px">
@@ -613,7 +641,7 @@ sup.ref{font-size:.66em;color:var(--ac2);font-weight:500;margin-left:2px;vertica
       <div class="k">Data-Centric Workflow</div><h3>業務プロセス</h3>
       <p>Input (Spec·Line List·2D P&ID) → Design &amp; Modeling (Spec/Catalog DB·3D·自動検証) → Analysis (応力·Model Review) → Output (ISO/GA·B/M·Stress·Reports)</p>
       <figure style="margin:18px 0 0;text-align:center">
-        <svg style="width:100%;max-width:1040px;height:auto" viewBox="0 0 1180 548" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Q_ISO データ中心の設計成果フロー図" font-family="Malgun Gothic, sans-serif">
+        <div class="flowwrap"><svg style="width:100%;max-width:1040px;height:auto" viewBox="0 0 1180 548" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Q_ISO データ中心の設計成果フロー図" font-family="Malgun Gothic, sans-serif">
 <defs><marker id="ah" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="var(--mut)"/></marker></defs>
 <rect x="16" y="22" width="178" height="26" rx="6" fill="var(--acd)" stroke="var(--ac)" stroke-width="1"/>
 <text x="105" y="40" text-anchor="middle" font-size="12" font-weight="700" fill="var(--ac)" font-family="Consolas,monospace" letter-spacing="1">INPUT</text>
@@ -720,7 +748,7 @@ sup.ref{font-size:.66em;color:var(--ac2);font-weight:500;margin-left:2px;vertica
 <line x1="972" y1="278" x2="982" y2="278" stroke="var(--mut)" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#ah)"/>
 <text x="16" y="524" font-size="12" fill="var(--mut)">* その他レポート: Insulation · Weight · RT rating · Welding · Support Drawing · F.M.C.C → Field · P&amp;ID Valve Data (← 2D P&amp;ID)</text>
 <text x="16" y="540" font-size="12" fill="var(--mut)">Input (Spec·Line List·2D P&amp;ID) → Spec/Model/Catalog DB → 3D Platform · Q_ISO 自動化ツール → ISO/GA·B/M·Stress·レポート</text>
-</svg>
+</svg></div>
         <figcaption style="margin-top:8px;font-size:12.5px;color:var(--mut)">Spec·Model·Catalog DB → ISO/GA·B/M·Stress·レポートまでのデータ中心の成果フロー</figcaption>
       </figure>
     </div>
@@ -859,7 +887,7 @@ var YC={2010:37,2011:28,2012:19,2013:21,2014:20,2015:17,2016:19,2017:26,2018:46,
 })();
 </script>
 <!-- 문의폼 → Supabase (anon insert, RLS 보호) -->
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js" defer></script>
 <script>
 (function(){
   var SB_URL="https://eoggixfmbggwhwzicncc.supabase.co";
